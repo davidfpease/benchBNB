@@ -8,6 +8,7 @@ class Api::SessionsController < ApplicationController
     else
       login!(@user)
       render 'api/users/show'
+    end
   end 
 
   def destroy
