@@ -3,15 +3,15 @@ import {
   RECEIVE_CURRENT_USER 
  } from '../actions/session_actions'
 
-export default (state = {}, action) {
+export default (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
       //why do we use Object.assign here?
-      return Object.assign({}, { session: action.errors });
+      return action.errors;
     case RECEIVE_CURRENT_USER:
-      return { session: [] };
+      return [];
     default:
-      state;
-  }
+      return state;
+  };
 }
